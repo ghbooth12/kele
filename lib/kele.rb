@@ -1,4 +1,5 @@
 require 'httparty'
+# require 'json'
 
 class Kele
   def initialize(email, password)
@@ -13,5 +14,10 @@ class Kele
     else
       hash
     end
+  end
+
+  def get_me
+    response = HTTParty.get("#{@base_uri}/users/me", headers: { "authorization" => user_token })
+    JSON.parse response.body
   end
 end
