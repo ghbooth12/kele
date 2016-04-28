@@ -18,8 +18,8 @@ module Messaging
         "authorization" => user_token
       },
       body: {
-        user_id: 2328805,
-        recipient_id: 539470,
+        user_id: get_me["id"],
+        recipient_id: mentor_id,
         subject: string,
         "stripped-text" => text
       }
